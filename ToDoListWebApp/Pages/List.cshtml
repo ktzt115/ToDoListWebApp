@@ -1,9 +1,9 @@
 ﻿@page
 @model ToDoListWebApp.Pages.ListModel
 
-<p><a href="/new">Create Task</a></p>
+<p><a href="/new" class="btn btn-primary">Create Task</a></p>
 <h1>
-    ToDo List
+    Thuzar ToDo List
 </h1>
 
 @if(Model.ToDos == null)
@@ -12,7 +12,7 @@
 }
 else
 {
-    <table class="table">
+    <table class="table table-borderless">
         <thead>
             <tr>
                 <td>Id</td>
