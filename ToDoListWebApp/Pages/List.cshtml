@@ -1,0 +1,37 @@
+﻿@page
+@model ToDoListWebApp.Pages.ListModel
+
+<p><a href="/new">Create Task</a></p>
+<h1>
+    ToDo List
+</h1>
+
+@if(Model.ToDos == null)
+{
+    <p>No Tasks Created</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Task</td>
+                <td>Date Added</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var todo in Model.ToDos)
+            {
+                <tr>
+                    <td>@todo.Id</td>
+                    <td>@todo.Task</td>
+                    <td>@todo.DateAdded.ToShortDateString()</td>
+                    <td>@todo.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
